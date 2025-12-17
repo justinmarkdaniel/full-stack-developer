@@ -4,17 +4,17 @@ const skillCategories = [
     skills: [
       { name: "React", level: 95 },
       { name: "TypeScript", level: 90 },
-      { name: "Next.js", level: 85 },
+      { name: "Next.js", level: 88 },
       { name: "Tailwind CSS", level: 92 },
     ],
   },
   {
     title: "Backend",
     skills: [
-      { name: "Node.js", level: 90 },
+      { name: "Node.js", level: 92 },
       { name: "Express", level: 88 },
-      { name: "PostgreSQL", level: 82 },
-      { name: "GraphQL", level: 78 },
+      { name: "PostgreSQL", level: 85 },
+      { name: "Supabase", level: 90 },
     ],
   },
   {
@@ -22,8 +22,8 @@ const skillCategories = [
     skills: [
       { name: "Git", level: 92 },
       { name: "Docker", level: 80 },
-      { name: "AWS", level: 75 },
-      { name: "CI/CD", level: 82 },
+      { name: "AWS / GCP", level: 78 },
+      { name: "CI/CD", level: 85 },
     ],
   },
 ];
@@ -52,7 +52,7 @@ const Skills = () => {
                 <span className="w-2 h-2 bg-primary rounded-full" />
                 {category.title}
               </h3>
-              
+
               <div className="space-y-4">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skill.name} className="space-y-2">
@@ -81,9 +81,9 @@ const Skills = () => {
           <h3 className="text-lg font-semibold mb-6">Also experienced with</h3>
           <div className="flex flex-wrap gap-3">
             {[
-              "Redux", "Zustand", "Prisma", "MongoDB", "Redis",
-              "Jest", "Cypress", "Storybook", "Figma", "Linux",
-              "REST APIs", "WebSockets", "OAuth", "Stripe"
+              "JavaScript (ES6+)", "HTML5", "CSS3", "REST APIs", "Prisma",
+              "MySQL", "MongoDB", "Jest", "Cypress", "GitHub Actions",
+              "Stripe", "Responsive Design", "Accessibility (WCAG)"
             ].map((tech) => (
               <span
                 key={tech}

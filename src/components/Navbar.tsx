@@ -8,7 +8,11 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
-const Navbar = () => {
+interface NavbarProps {
+  onOpenContact: () => void;
+}
+
+const Navbar = ({ onOpenContact }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -33,7 +37,7 @@ const Navbar = () => {
         {/* Logo */}
         <a href="#" className="font-mono text-lg font-semibold hover:text-primary transition-colors">
           <span className="text-primary">&lt;</span>
-          AC
+          JD
           <span className="text-primary">/&gt;</span>
         </a>
 
@@ -49,10 +53,8 @@ const Navbar = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
             </a>
           ))}
-          <Button variant="outline" size="sm" asChild>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-              Resume
-            </a>
+          <Button variant="outline" size="sm" onClick={onOpenContact}>
+            Hire Me
           </Button>
         </div>
 
@@ -82,10 +84,16 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <Button variant="outline" size="sm" className="w-fit" asChild>
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-                Resume
-              </a>
+            <Button
+              variant="outline"
+              size="sm"
+              className="w-fit"
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                onOpenContact();
+              }}
+            >
+              Hire Me
             </Button>
           </div>
         </div>

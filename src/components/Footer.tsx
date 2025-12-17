@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,13 +9,13 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           {/* Copyright */}
           <p className="text-sm text-muted-foreground font-mono">
-            © {currentYear} Alex Chen. Built with React & TypeScript.
+            © {currentYear} Justin Daniel. Built with React & TypeScript.
           </p>
 
           {/* Social links */}
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com"
+              href="https://github.com/justinmarkdaniel"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-muted-foreground hover:text-primary transition-colors"
@@ -24,22 +24,13 @@ const Footer = () => {
               <Github className="w-4 h-4" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/justinmarkdaniel"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-muted-foreground hover:text-primary transition-colors"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-4 h-4" />
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-muted-foreground hover:text-primary transition-colors"
-              aria-label="Twitter"
-            >
-              <Twitter className="w-4 h-4" />
             </a>
           </div>
         </div>

@@ -1,7 +1,11 @@
 import { ArrowUpRight, Mail, MapPin, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const Contact = () => {
+interface ContactProps {
+  onOpenContact: () => void;
+}
+
+const Contact = ({ onOpenContact }: ContactProps) => {
   return (
     <section id="contact" className="py-32 px-6">
       <div className="container max-w-5xl mx-auto">
@@ -15,17 +19,15 @@ const Contact = () => {
                 <span className="text-gradient"> mind?</span>
               </h2>
               <p className="text-muted-foreground text-lg">
-                I'm always interested in hearing about new projects and opportunities. 
+                I'm always interested in hearing about new projects and opportunities.
                 Whether you have a question or just want to say hi, feel free to reach out.
               </p>
             </div>
 
-            <Button variant="glow" size="lg" className="group" asChild>
-              <a href="mailto:hello@alexchen.dev">
-                <Mail className="w-5 h-5" />
-                Send me an email
-                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </a>
+            <Button variant="glow" size="lg" className="group" onClick={onOpenContact}>
+              <Mail className="w-5 h-5" />
+              Send me a message
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Button>
           </div>
 
@@ -38,11 +40,11 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <a 
-                    href="mailto:hello@alexchen.dev" 
+                  <a
+                    href="mailto:justinmarkdaniel@gmail.com"
                     className="font-mono hover:text-primary transition-colors"
                   >
-                    hello@alexchen.dev
+                    justinmarkdaniel@gmail.com
                   </a>
                 </div>
               </div>
@@ -55,7 +57,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Location</p>
-                  <p className="font-mono">San Francisco, CA</p>
+                  <p className="font-mono">Brisbane, QLD, Australia</p>
                 </div>
               </div>
             </div>

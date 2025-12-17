@@ -3,33 +3,33 @@ import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: "CloudSync Pro",
-    description: "Real-time collaboration platform with WebSocket-powered sync, enabling teams to work on documents simultaneously.",
-    tech: ["React", "Node.js", "Socket.io", "PostgreSQL", "Redis"],
+    title: "SEO Blab",
+    description: "Full-stack SaaS platform with React, TypeScript, and Node.js. Features AI chat interface, real-time dashboard updates, Stripe billing integration, and Supabase backend with row-level security.",
+    tech: ["React", "TypeScript", "Node.js", "Supabase", "Stripe", "Google Cloud"],
     liveUrl: "#",
     githubUrl: "#",
     featured: true,
   },
   {
-    title: "DevMetrics",
-    description: "Analytics dashboard for engineering teams tracking deployment frequency, lead time, and system reliability metrics.",
-    tech: ["Next.js", "TypeScript", "Prisma", "Chart.js"],
+    title: "Keyword Grid",
+    description: "Data-intensive analytics platform with custom authentication, role-based access control, and recurring subscription management. Built optimised database schemas for handling large keyword datasets.",
+    tech: ["React", "Node.js", "PostgreSQL", "MySQL", "Stripe"],
     liveUrl: "#",
     githubUrl: "#",
     featured: true,
   },
   {
-    title: "APIForge",
-    description: "Automated REST API generator from database schemas with built-in authentication and rate limiting.",
-    tech: ["Node.js", "Express", "JWT", "Swagger"],
+    title: "Real-time Dashboard",
+    description: "Interactive analytics dashboard with responsive front-end components, real-time data updates via WebSockets, and comprehensive unit and integration testing.",
+    tech: ["React", "TypeScript", "Jest", "Cypress", "REST APIs"],
     liveUrl: "#",
     githubUrl: "#",
     featured: false,
   },
   {
-    title: "TaskFlow",
-    description: "Minimalist project management tool with Kanban boards, time tracking, and team collaboration features.",
-    tech: ["React", "Redux", "Node.js", "MongoDB"],
+    title: "CI/CD Pipeline System",
+    description: "Automated deployment pipeline with GitHub Actions and Cloud Build for continuous testing and deployments. Ensures component reliability through comprehensive test coverage.",
+    tech: ["GitHub Actions", "Docker", "Node.js", "Jest"],
     liveUrl: "#",
     githubUrl: "#",
     featured: false,
@@ -45,7 +45,7 @@ const Projects = () => {
           <span className="text-primary font-mono text-sm">// Featured Work</span>
           <h2 className="text-4xl md:text-5xl font-bold">Projects</h2>
           <p className="text-muted-foreground max-w-xl">
-            A selection of recent projects showcasing my approach to building scalable, 
+            A selection of recent projects showcasing my approach to building scalable,
             user-focused applications.
           </p>
         </div>
@@ -61,7 +61,7 @@ const Projects = () => {
             >
               {/* Hover glow effect */}
               <div className="absolute inset-0 rounded-xl bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-              
+
               <div className="relative z-10 flex flex-col h-full">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
@@ -95,7 +95,7 @@ const Projects = () => {
                 <h3 className="text-xl md:text-2xl font-semibold mb-3 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                
+
                 <p className="text-muted-foreground mb-6 flex-grow">
                   {project.description}
                 </p>
@@ -118,7 +118,7 @@ const Projects = () => {
         {/* View all link */}
         <div className="mt-12 text-center">
           <Button variant="ghost" className="group" asChild>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/justinmarkdaniel" target="_blank" rel="noopener noreferrer">
               View all projects on GitHub
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>

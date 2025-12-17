@@ -1,4 +1,4 @@
-import { ArrowDown, Github, Linkedin } from "lucide-react";
+import { ArrowDown, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface HeroProps {
@@ -70,7 +70,7 @@ const Hero = ({ onOpenContact }: HeroProps) => {
             <Button variant="glow" size="lg" asChild>
               <a href="#projects">View Projects</a>
             </Button>
-            <Button variant="outline" size="lg" onClick={onOpenContact}>
+            <Button variant="outline" size="lg" onClick={onOpenContact} className="hover:text-primary">
               Get in Touch
             </Button>
           </div>
@@ -89,23 +89,18 @@ const Hero = ({ onOpenContact }: HeroProps) => {
             >
               <Github className="w-5 h-5" />
             </a>
-            <a
-              href="https://linkedin.com/in/justinmarkdaniel"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-muted-foreground hover:text-primary transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="w-5 h-5" />
-            </a>
           </div>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <button
+        onClick={() => document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" })}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer hover:text-primary transition-colors"
+        aria-label="Scroll to projects"
+      >
         <ArrowDown className="w-5 h-5 text-muted-foreground" />
-      </div>
+      </button>
     </section>
   );
 };

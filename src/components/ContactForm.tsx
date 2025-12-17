@@ -35,10 +35,18 @@ const ContactForm = ({ open, onOpenChange }: ContactFormProps) => {
 
     const formData = new FormData(e.currentTarget);
 
-    // Check honeypot
-    if (formData.get("website")) {
-      // Bot detected, silently fail
-      setIsSubmitting(false);
+    // Check honeypot - if filled, fake success without actually submitting
+    if (formData.get("lastname")) {
+      // Bot detected, show fake success
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setIsSuccess(true);
+        setTimeout(() => {
+          onOpenChange(false);
+          setIsSuccess(false);
+          setFileName(null);
+        }, 2000);
+      }, 1000);
       return;
     }
 
@@ -66,10 +74,10 @@ const ContactForm = ({ open, onOpenChange }: ContactFormProps) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-lg bg-card border-border">
+      <DialogContent className="sm:max-w-lg bg-card border-border max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold">
-            Get in <span className="text-gradient">Touch</span>
+            Get in Touch
           </DialogTitle>
         </DialogHeader>
 
@@ -83,10 +91,10 @@ const ContactForm = ({ open, onOpenChange }: ContactFormProps) => {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
-            {/* Honeypot field - hidden from users */}
+{/* Honeypot field - hidden from users */}
             <input
               type="text"
-              name="website"
+              name="lastname"
               style={{ display: "none" }}
               tabIndex={-1}
               autoComplete="off"
@@ -115,6 +123,16 @@ const ContactForm = ({ open, onOpenChange }: ContactFormProps) => {
                 type="email"
                 placeholder="your@email.com"
                 required
+                className="bg-secondary/50 border-border focus:border-primary"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="company">Company (optional)</Label>
+              <Input
+                id="company"
+                name="company"
+                placeholder="Your company name"
                 className="bg-secondary/50 border-border focus:border-primary"
               />
             </div>

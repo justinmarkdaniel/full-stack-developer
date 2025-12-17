@@ -15,14 +15,40 @@ interface NavbarProps {
 const Navbar = ({ onOpenContact }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      // Clear active section when near the top (hero area)
+      if (window.scrollY < window.innerHeight * 0.5) {
+        setActiveSection(null);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = navLinks.map((link) => document.querySelector(link.href));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && window.scrollY >= window.innerHeight * 0.5) {
+            setActiveSection(`#${entry.target.id}`);
+          }
+        });
+      },
+      { rootMargin: "-50% 0px -50% 0px" }
+    );
+
+    sections.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -35,7 +61,14 @@ const Navbar = ({ onOpenContact }: NavbarProps) => {
     >
       <nav className="container max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="font-mono text-lg font-semibold hover:text-primary transition-colors">
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+          className="font-mono text-lg font-semibold hover:text-primary transition-colors"
+        >
           <span className="text-primary">&lt;</span>
           JD
           <span className="text-primary">/&gt;</span>
@@ -47,10 +80,22 @@ const Navbar = ({ onOpenContact }: NavbarProps) => {
             <a
               key={link.label}
               href={link.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors relative group"
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className={`text-sm transition-colors relative group ${
+                activeSection === link.href
+                  ? "text-foreground"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+              <span
+                className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                  activeSection === link.href ? "w-full" : "w-0 group-hover:w-full"
+                }`}
+              />
             </a>
           ))}
           <Button variant="outline" size="sm" onClick={onOpenContact}>
@@ -78,8 +123,16 @@ const Navbar = ({ onOpenContact }: NavbarProps) => {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
+                className={`transition-colors py-2 ${
+                  activeSection === link.href
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsMobileMenuOpen(false);
+                  document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
+                }}
               >
                 {link.label}
               </a>

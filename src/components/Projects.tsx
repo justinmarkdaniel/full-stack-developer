@@ -8,7 +8,7 @@ const projects = [
     description: "Full-stack SaaS platform with React, TypeScript, and Node.js. Features AI chat interface, real-time dashboard updates, Stripe billing integration, and Supabase backend with row-level security.",
     tech: ["React", "TypeScript", "Node.js", "Supabase", "Stripe", "Google Cloud"],
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: null,
     featured: true,
   },
   {
@@ -16,13 +16,13 @@ const projects = [
     description: "Data-intensive analytics platform with custom authentication, role-based access control, and recurring subscription management. Built optimised database schemas for handling large keyword datasets.",
     tech: ["React", "Node.js", "PostgreSQL", "MySQL", "Stripe"],
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: null,
     featured: true,
   },
   {
     title: "Real-time Dashboard",
     description: "Interactive analytics dashboard with responsive front-end components, real-time data updates via WebSockets, and comprehensive unit and integration testing.",
-    tech: ["React", "TypeScript", "Jest", "Cypress", "REST APIs"],
+    tech: ["React", "TypeScript", "Jest", "REST APIs"],
     liveUrl: "#",
     githubUrl: "#",
     featured: false,
@@ -33,6 +33,22 @@ const projects = [
     tech: ["GitHub Actions", "Docker", "Node.js", "Jest"],
     liveUrl: "#",
     githubUrl: "#",
+    featured: false,
+  },
+  {
+    title: "Block Distracting Websites",
+    description: "Chrome extension that blocks distracting websites and replaces them with motivational quotes.",
+    tech: ["JavaScript", "Chrome Extension", "HTML", "CSS"],
+    liveUrl: null,
+    githubUrl: "https://github.com/justinmarkdaniel/distractingwebsiteblocker",
+    featured: false,
+  },
+  {
+    title: "Negative News Filter",
+    description: "Chrome extension that rewrites negative news headlines into positive ones with AI. Filters 100+ news sites automatically.",
+    tech: ["JavaScript", "Chrome Extension", "AI", "HTML", "CSS"],
+    liveUrl: null,
+    githubUrl: "https://github.com/justinmarkdaniel/negativenewsfilter",
     featured: false,
   },
 ];
@@ -79,20 +95,28 @@ const Projects = () => {
                     )}
                   </div>
                   <div className="flex gap-2">
-                    <a
-                      href={project.githubUrl}
-                      className="p-2 text-muted-foreground hover:text-primary transition-colors"
-                      aria-label={`${project.title} GitHub repository`}
-                    >
-                      <Github className="w-4 h-4" />
-                    </a>
-                    <a
-                      href={project.liveUrl}
-                      className="p-2 text-muted-foreground hover:text-primary transition-colors"
-                      aria-label={`${project.title} live demo`}
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                    </a>
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 text-muted-foreground hover:text-primary transition-colors"
+                        aria-label={`${project.title} GitHub repository`}
+                      >
+                        <Github className="w-4 h-4" />
+                      </a>
+                    )}
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 text-muted-foreground hover:text-primary transition-colors"
+                        aria-label={`${project.title} live demo`}
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    )}
                   </div>
                 </div>
 

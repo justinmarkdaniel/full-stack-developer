@@ -52,7 +52,7 @@ const Hero = ({ onOpenContact }: HeroProps) => {
             className="flex flex-wrap gap-3 animate-fade-up"
             style={{ animationDelay: "300ms", opacity: 0 }}
           >
-            {["React", "Node.js", "TypeScript", "Next.js", "PostgreSQL", "Supabase"].map((tech) => (
+            {["React", "Node.js", "TypeScript", "Next.js", "SQL", "AWS", "Google Cloud"].map((tech) => (
               <span
                 key={tech}
                 className="px-3 py-1.5 text-sm font-mono text-muted-foreground bg-secondary/50 rounded-md border border-border hover:border-primary/50 hover:text-primary transition-colors cursor-default"

@@ -14,7 +14,7 @@ const skillCategories = [
       { name: "Node.js", level: 92 },
       { name: "Express", level: 88 },
       { name: "PostgreSQL", level: 85 },
-      { name: "Supabase", level: 90 },
+      { name: "PHP", level: 95 },
     ],
   },
   {
@@ -81,8 +81,8 @@ const Skills = () => {
           <h3 className="text-lg font-semibold mb-6">Also experienced with</h3>
           <div className="flex flex-wrap gap-3">
             {[
-              "JavaScript (ES6+)", "HTML5", "CSS3", "REST APIs", "Prisma",
-              "MySQL", "MongoDB", "Jest", "Cypress", "GitHub Actions",
+              "JavaScript (ES6+)", "HTML5", "CSS3", "REST APIs",
+              "MySQL", "MongoDB", "Jest", "GitHub Actions",
               "Stripe", "Responsive Design", "Accessibility (WCAG)"
             ].map((tech) => (
               <span

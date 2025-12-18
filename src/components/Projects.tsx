@@ -1,9 +1,10 @@
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import BrandCarousel from "./BrandCarousel";
 
 const projects = [
   {
-    title: "SEO Blab",
+    title: "SEO Blab - Agentic AI platform powered by React",
     description: "Full-stack SaaS platform with React, TypeScript, and Node.js. Features AI chat interface, real-time dashboard updates, Stripe billing integration, and Supabase backend with row-level security.",
     tech: ["React", "TypeScript", "Node.js", "Supabase", "Stripe", "Google Cloud"],
     liveUrl: "#",
@@ -11,7 +12,7 @@ const projects = [
     featured: true,
   },
   {
-    title: "Keyword Grid",
+    title: "Keyword Grid - Word vectorization SAAS for SEO scoring",
     description: "Data-intensive analytics platform with custom authentication, role-based access control, and recurring subscription management. Built optimised database schemas for handling large keyword datasets.",
     tech: ["React", "Node.js", "PostgreSQL", "MySQL", "Stripe"],
     liveUrl: "#",
@@ -39,6 +40,9 @@ const projects = [
 const Projects = () => {
   return (
     <section id="projects" className="py-32 px-6">
+      {/* Brand Carousel */}
+      <BrandCarousel />
+
       <div className="container max-w-5xl mx-auto">
         {/* Section header */}
         <div className="space-y-4 mb-16">

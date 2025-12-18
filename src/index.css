@@ -149,3 +149,16 @@
   background-size: 200% 100%;
   animation: shimmer 2s infinite;
 }
+
+@keyframes scroll-infinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-scroll-infinite {
+  animation: scroll-infinite 80s linear infinite;
+}

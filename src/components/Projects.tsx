@@ -5,17 +5,17 @@ import BrandCarousel from "./BrandCarousel";
 const projects = [
   {
     title: "SEO Blab - Agentic AI platform powered by React",
-    description: "Full-stack SaaS platform with React, TypeScript, and Node.js. Features AI chat interface, real-time dashboard updates, Stripe billing integration, and Supabase backend with row-level security.",
+    description: "Full-stack SaaS platform with React, TypeScript, and Node.js. Agentic AI system built with OpenAI Agent SDK. Features AI chat interface, real-time dashboard updates, Stripe billing integration, and Supabase backend with row-level security.",
     tech: ["React", "TypeScript", "Node.js", "Supabase", "Stripe", "Google Cloud"],
     liveUrl: "https://www.seoblab.com",
     githubUrl: null,
     featured: true,
   },
   {
-    title: "Keyword Grid - Word vectorization SAAS for SEO scoring",
+    title: "Keyword Grid - Word vectorization SEO scoring SAAS",
     description: "Data-intensive analytics platform with custom authentication, role-based access control, and recurring subscription management. Built optimised database schemas for handling large keyword datasets.",
     tech: ["React", "Node.js", "PostgreSQL", "MySQL", "Stripe"],
-    liveUrl: "https://keywordgrid.com",
+    liveUrl: "https://www.keywordgrid.com",
     githubUrl: null,
     featured: true,
   },

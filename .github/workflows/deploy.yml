@@ -1,0 +1,61 @@
+name: Deploy Portfolios
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy-fullstack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Full Stack Portfolio
+        run: npm run build
+        env:
+          VITE_PORTFOLIO_TYPE: fullstack
+          VITE_BASE_PATH: /full-stack-developer/
+
+      - name: Deploy to full-stack-developer
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.PORTFOLIO_DEPLOY_TOKEN }}
+          external_repository: justinmarkdaniel/full-stack-developer
+          publish_branch: gh-pages
+          publish_dir: ./dist
+
+  deploy-frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Front End Portfolio
+        run: npm run build
+        env:
+          VITE_PORTFOLIO_TYPE: frontend
+          VITE_BASE_PATH: /front-end-developer/
+
+      - name: Deploy to front-end-developer
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.PORTFOLIO_DEPLOY_TOKEN }}
+          external_repository: justinmarkdaniel/front-end-developer
+          publish_branch: gh-pages
+          publish_dir: ./dist

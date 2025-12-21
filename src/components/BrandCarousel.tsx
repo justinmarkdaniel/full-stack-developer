@@ -1,12 +1,13 @@
 // Real client logos with aspect ratio info for proper sizing
 // invert: true for dark logos that need to be lightened on dark background
+const baseUrl = import.meta.env.BASE_URL;
 const brands = [
-  { name: "Ray White", logo: "/client-badges/rwlogo-grey-475.webp", width: "w-28", invert: false },
-  { name: "Hype DC", logo: "/client-badges/hypedc-black.webp", width: "w-32", invert: true },
-  { name: "Camilla", logo: "/client-badges/Camilla-logo-600.png", width: "w-28", invert: false },
-  { name: "Business Events Sydney", logo: "/client-badges/besydney-blue-logo-rgb.png", width: "w-24", invert: true },
-  { name: "Propstore", logo: "/client-badges/Propstore_Logo.jpg", width: "w-28", invert: true },  // 4.3:1 aspect after crop
-  { name: "ChemDry", logo: "/client-badges/chemdry-1-logo-png-transparent.png", width: "w-28", invert: false, bright: true }, // 3.1:1 aspect after crop
+  { name: "Ray White", logo: `${baseUrl}client-badges/rwlogo-grey-475.webp`, width: "w-28", invert: false },
+  { name: "Hype DC", logo: `${baseUrl}client-badges/hypedc-black.webp`, width: "w-32", invert: true },
+  { name: "Camilla", logo: `${baseUrl}client-badges/Camilla-logo-600.png`, width: "w-28", invert: false },
+  { name: "Business Events Sydney", logo: `${baseUrl}client-badges/besydney-blue-logo-rgb.png`, width: "w-24", invert: true },
+  { name: "Propstore", logo: `${baseUrl}client-badges/Propstore_Logo.jpg`, width: "w-28", invert: true },  // 4.3:1 aspect after crop
+  { name: "ChemDry", logo: `${baseUrl}client-badges/chemdry-1-logo-png-transparent.png`, width: "w-28", invert: false, bright: true }, // 3.1:1 aspect after crop
 ];
 
 // Placeholder logos (commented out for reference)

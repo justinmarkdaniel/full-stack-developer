@@ -1,5 +1,6 @@
 import { ArrowDown, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { config } from "@/config/portfolio";
 
 interface HeroProps {
   onOpenContact: () => void;
@@ -41,7 +42,7 @@ const Hero = ({ onOpenContact }: HeroProps) => {
               className="text-xl md:text-2xl text-muted-foreground font-light max-w-2xl animate-fade-up"
               style={{ animationDelay: "200ms", opacity: 0 }}
             >
-              Full Stack TypeScript Developer crafting performant,
+              {config.heroSubtitle}
               <span className="text-foreground"> scalable </span>
               web applications with modern technologies.
             </p>
@@ -52,7 +53,7 @@ const Hero = ({ onOpenContact }: HeroProps) => {
             className="flex flex-wrap gap-3 animate-fade-up"
             style={{ animationDelay: "300ms", opacity: 0 }}
           >
-            {["React", "Node.js", "TypeScript", "JavaScript", "Next.js", "SQL", "AWS", "Google Cloud"].map((tech) => (
+            {config.techStack.map((tech) => (
               <span
                 key={tech}
                 className="px-3 py-1.5 text-sm font-mono text-muted-foreground bg-secondary/50 rounded-md border border-border hover:border-primary/50 hover:text-primary transition-colors cursor-default"

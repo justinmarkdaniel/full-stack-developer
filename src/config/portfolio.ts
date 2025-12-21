@@ -31,7 +31,7 @@ export const config = {
   // Tech stack pills (hero section)
   techStack: isFullStack
     ? ['React', 'Node.js', 'TypeScript', 'JavaScript', 'Next.js', 'SQL', 'AWS', 'Google Cloud']
-    : ['React', 'TypeScript', 'JavaScript', 'Next.js', 'Tailwind CSS', 'HTML5', 'CSS3'],
+    : ['React', 'TypeScript', 'JavaScript', 'Next.js', 'Tailwind CSS', 'HTML5', 'CSS3', 'Git'],
 
   // Skills section - main categories
   skillCategories: isFullStack
@@ -78,18 +78,18 @@ export const config = {
           title: 'Styling & UI',
           skills: [
             { name: 'Tailwind CSS', level: 92 },
-            { name: 'CSS3', level: 95 },
-            { name: 'Responsive Design', level: 90 },
-            { name: 'Animations', level: 85 },
+            { name: 'CSS3 / Sass', level: 90 },
+            { name: 'Responsive Design', level: 92 },
+            { name: 'HTML5', level: 95 },
           ],
         },
         {
-          title: 'Tools & Testing',
+          title: 'Tools & Workflow',
           skills: [
             { name: 'Git', level: 92 },
-            { name: 'Jest', level: 85 },
-            { name: 'Webpack/Vite', level: 80 },
-            { name: 'Figma', level: 75 },
+            { name: 'Vite / Webpack', level: 85 },
+            { name: 'Jest / RTL', level: 82 },
+            { name: 'REST APIs', level: 88 },
           ],
         },
       ],
@@ -97,7 +97,7 @@ export const config = {
   // Additional technologies (skills section)
   additionalTech: isFullStack
     ? ['TypeScript', 'HTML5', 'CSS3', 'REST APIs', 'MySQL', 'MongoDB', 'Jest', 'GitHub Actions', 'Stripe', 'Responsive Design', 'Accessibility (WCAG)']
-    : ['HTML5', 'CSS3', 'REST APIs', 'Jest', 'Storybook', 'Responsive Design', 'Accessibility (WCAG)', 'Web Performance', 'SEO'],
+    : ['State Management', 'Accessibility (WCAG)', 'Web Performance', 'ESLint / Prettier', 'CI/CD', 'npm / pnpm'],
 };
 
 export default config;

@@ -38,7 +38,7 @@ const projects = [
   {
     title: "Block Distracting Websites",
     description: "Chrome extension that blocks distracting websites and replaces them with motivational quotes.",
-    tech: ["JavaScript", "Chrome Extension", "HTML", "CSS"],
+    tech: ["TypeScript", "Chrome Extension", "HTML", "CSS"],
     liveUrl: null,
     githubUrl: "https://github.com/justinmarkdaniel/distractingwebsiteblocker",
     featured: false,
@@ -46,7 +46,7 @@ const projects = [
   {
     title: "Negative News Filter",
     description: "Chrome extension that rewrites negative news headlines into positive ones with AI. Filters 100+ news sites automatically.",
-    tech: ["JavaScript", "Chrome Extension", "AI", "HTML", "CSS"],
+    tech: ["TypeScript", "Chrome Extension", "AI", "HTML", "CSS"],
     liveUrl: null,
     githubUrl: "https://github.com/justinmarkdaniel/negativenewsfilter",
     featured: false,

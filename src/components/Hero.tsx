@@ -41,7 +41,7 @@ const Hero = ({ onOpenContact }: HeroProps) => {
               className="text-xl md:text-2xl text-muted-foreground font-light max-w-2xl animate-fade-up"
               style={{ animationDelay: "200ms", opacity: 0 }}
             >
-              Full Stack JavaScript Developer crafting performant,
+              Full Stack TypeScript Developer crafting performant,
               <span className="text-foreground"> scalable </span>
               web applications with modern technologies.
             </p>
@@ -52,7 +52,7 @@ const Hero = ({ onOpenContact }: HeroProps) => {
             className="flex flex-wrap gap-3 animate-fade-up"
             style={{ animationDelay: "300ms", opacity: 0 }}
           >
-            {["React", "Node.js", "TypeScript", "Next.js", "SQL", "AWS", "Google Cloud"].map((tech) => (
+            {["React", "Node.js", "TypeScript", "JavaScript", "Next.js", "SQL", "AWS", "Google Cloud"].map((tech) => (
               <span
                 key={tech}
                 className="px-3 py-1.5 text-sm font-mono text-muted-foreground bg-secondary/50 rounded-md border border-border hover:border-primary/50 hover:text-primary transition-colors cursor-default"

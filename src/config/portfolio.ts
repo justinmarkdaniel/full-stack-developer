@@ -97,7 +97,7 @@ export const config = {
   // Additional technologies (skills section)
   additionalTech: isFullStack
     ? ['TypeScript', 'HTML5', 'CSS3', 'REST APIs', 'MySQL', 'MongoDB', 'Jest', 'GitHub Actions', 'Stripe', 'Responsive Design', 'Accessibility (WCAG)']
-    : ['State Management', 'Accessibility (WCAG)', 'Web Performance', 'ESLint / Prettier', 'CI/CD', 'npm / pnpm'],
+    : ['HTML5', 'CSS3', 'REST APIs', 'Responsive Design', 'Accessibility (WCAG)', 'Web Performance', 'CI/CD'],
 };
 
 export default config;

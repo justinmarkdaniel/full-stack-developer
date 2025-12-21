@@ -5,6 +5,10 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pages: write
+
 jobs:
   deploy-fullstack:
     runs-on: ubuntu-latest
@@ -24,12 +28,13 @@ jobs:
         env:
           VITE_PORTFOLIO_TYPE: fullstack
           VITE_BASE_PATH: /full-stack-developer/
+          VITE_TITLE: Full Stack TypeScript Developer
+          VITE_META_DESCRIPTION: Full Stack TypeScript Developer crafting performant, scalable web applications with React, Node.js, TypeScript, and modern technologies.
 
-      - name: Deploy to full-stack-developer
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          personal_token: ${{ secrets.PORTFOLIO_DEPLOY_TOKEN }}
-          external_repository: justinmarkdaniel/full-stack-developer
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./dist
 
@@ -51,11 +56,16 @@ jobs:
         env:
           VITE_PORTFOLIO_TYPE: frontend
           VITE_BASE_PATH: /front-end-developer/
+          VITE_TITLE: Front End Developer
+          VITE_META_DESCRIPTION: Front End Developer crafting performant, responsive web applications with React, TypeScript, and modern UI technologies.
 
-      - name: Deploy to front-end-developer
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Deploy to front-end-developer repo
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.FRONTEND_DEPLOY_KEY }}
         with:
-          personal_token: ${{ secrets.PORTFOLIO_DEPLOY_TOKEN }}
-          external_repository: justinmarkdaniel/front-end-developer
-          publish_branch: gh-pages
-          publish_dir: ./dist
+          source-directory: 'dist'
+          destination-github-username: 'justinmarkdaniel'
+          destination-repository-name: 'front-end-developer'
+          target-branch: 'gh-pages'
+          commit-message: 'Deploy front-end portfolio'

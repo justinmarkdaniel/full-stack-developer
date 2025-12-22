@@ -57,7 +57,7 @@ const Contact = ({ onOpenContact }: ContactProps) => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Location</p>
-                  <p className="font-mono">Brisbane, QLD, Australia</p>
+                  <p className="font-mono">Central Coast, NSW, Australia</p>
                 </div>
               </div>
             </div>

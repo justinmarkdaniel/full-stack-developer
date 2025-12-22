@@ -218,7 +218,7 @@ const ContactForm = ({ open, onOpenChange }: ContactFormProps) => {
                 </a>
                 <p className="flex items-center gap-2 text-muted-foreground">
                   <MapPin className="w-4 h-4" />
-                  Brisbane, QLD, Australia
+                  Central Coast, NSW, Australia
                 </p>
               </div>
             </div>

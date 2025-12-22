@@ -43,7 +43,7 @@ const Hero = ({ onOpenContact }: HeroProps) => {
               style={{ animationDelay: "200ms", opacity: 0 }}
             >
               {config.heroSubtitle}
-              <span className="text-foreground"> scalable </span>
+              <span className="text-foreground"> high performance </span>
               web applications with modern technologies.
             </p>
           </div>

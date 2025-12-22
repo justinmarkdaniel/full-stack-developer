@@ -16,17 +16,17 @@ export const config = {
 
   // Titles and headings
   title: isFullStack
-    ? 'Full Stack TypeScript Developer'
+    ? 'Full Stack Developer'
     : 'Front End Developer',
 
   metaDescription: isFullStack
-    ? 'Full Stack TypeScript Developer crafting performant, scalable web applications with React, Node.js, TypeScript, and modern technologies.'
-    : 'Front End Developer crafting performant, responsive web applications with React, TypeScript, and modern UI technologies.',
+    ? 'Full Stack Developer crafting high performance web applications with modern technologies.'
+    : 'Front End Developer crafting high performance web applications with modern technologies.',
 
   // Hero section
   heroSubtitle: isFullStack
-    ? 'Full Stack TypeScript Developer crafting performant,'
-    : 'Front End Developer crafting performant,',
+    ? 'Full Stack Developer crafting'
+    : 'Front End Developer crafting',
 
   // Tech stack pills (hero section)
   techStack: isFullStack

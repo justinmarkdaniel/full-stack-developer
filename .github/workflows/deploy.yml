@@ -28,8 +28,8 @@ jobs:
         env:
           VITE_PORTFOLIO_TYPE: fullstack
           VITE_BASE_PATH: /full-stack-developer/
-          VITE_TITLE: Full Stack TypeScript Developer
-          VITE_META_DESCRIPTION: Full Stack TypeScript Developer crafting performant, scalable web applications with React, Node.js, TypeScript, and modern technologies.
+          VITE_TITLE: Full Stack Developer
+          VITE_META_DESCRIPTION: Full Stack Developer crafting high performance web applications with modern technologies.
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
@@ -57,7 +57,7 @@ jobs:
           VITE_PORTFOLIO_TYPE: frontend
           VITE_BASE_PATH: /front-end-developer/
           VITE_TITLE: Front End Developer
-          VITE_META_DESCRIPTION: Front End Developer crafting performant, responsive web applications with React, TypeScript, and modern UI technologies.
+          VITE_META_DESCRIPTION: Front End Developer crafting high performance web applications with modern technologies.
 
       - name: Deploy to front-end-developer repo
         uses: cpina/github-action-push-to-another-repository@main

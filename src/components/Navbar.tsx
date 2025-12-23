@@ -118,7 +118,7 @@ const Navbar = ({ onOpenContact }: NavbarProps) => {
       {/* Mobile menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border">
-          <div className="container px-6 py-4 flex flex-col gap-4">
+          <div className="container px-6 py-4 flex flex-col gap-4 items-center text-center">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -140,7 +140,6 @@ const Navbar = ({ onOpenContact }: NavbarProps) => {
             <Button
               variant="outline"
               size="sm"
-              className="w-fit"
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 onOpenContact();

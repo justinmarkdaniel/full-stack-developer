@@ -8,7 +8,7 @@ interface HeroProps {
 
 const Hero = ({ onOpenContact }: HeroProps) => {
   return (
-    <section className="min-h-screen flex flex-col justify-center relative overflow-hidden px-6">
+    <section className="min-h-screen flex flex-col justify-center relative overflow-hidden px-4 md:px-6">
       {/* Background grid pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)] opacity-30" />
 
@@ -19,7 +19,7 @@ const Hero = ({ onOpenContact }: HeroProps) => {
         <div className="space-y-8">
           {/* Status badge */}
           <div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/50 backdrop-blur-sm animate-fade-up"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/50 backdrop-blur-sm animate-fade-up mt-10 md:mt-0"
             style={{ animationDelay: "0ms" }}
           >
             <span className="relative flex h-2 w-2">
@@ -65,13 +65,13 @@ const Hero = ({ onOpenContact }: HeroProps) => {
 
           {/* CTA buttons */}
           <div
-            className="flex flex-wrap gap-4 pt-4 animate-fade-up"
+            className="flex gap-3 md:gap-4 pt-4 animate-fade-up"
             style={{ animationDelay: "400ms", opacity: 0 }}
           >
-            <Button variant="glow" size="lg" asChild>
+            <Button variant="glow" size="lg" asChild className="flex-1 md:flex-none text-sm md:text-base px-4 md:px-8">
               <a href="#projects">View Projects</a>
             </Button>
-            <Button variant="outline" size="lg" onClick={onOpenContact} className="hover:text-primary">
+            <Button variant="outline" size="lg" onClick={onOpenContact} className="hover:text-primary flex-1 md:flex-none text-sm md:text-base px-4 md:px-8">
               Get in Touch
             </Button>
           </div>

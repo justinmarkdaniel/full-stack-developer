@@ -151,14 +151,22 @@
 }
 
 @keyframes scroll-infinite {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(-33.333%);
+  to {
+    transform: translateX(-50%);
   }
 }
 
 .animate-scroll-infinite {
-  animation: scroll-infinite 40s linear infinite;
+  animation: scroll-infinite 100s linear infinite;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@media (max-width: 767px) {
+  .animate-scroll-infinite {
+    animation: scroll-infinite 80s linear infinite;
+  }
 }

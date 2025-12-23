@@ -2,7 +2,7 @@ import { config } from "@/config/portfolio";
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-32 px-6 bg-card/30">
+    <section id="skills" className="py-32 px-4 md:px-6 bg-card/30">
       <div className="container max-w-5xl mx-auto">
         {/* Section header */}
         <div className="space-y-4 mb-16">

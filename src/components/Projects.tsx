@@ -55,7 +55,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-32 px-6">
+    <section id="projects" className="py-32 px-4 md:px-6">
       {/* Brand Carousel */}
       <BrandCarousel />
 

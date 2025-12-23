@@ -22,17 +22,18 @@ const brands = [
 //   { name: "Stripe", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Stripe_Logo%2C_revised_2016.svg/2560px-Stripe_Logo%2C_revised_2016.svg.png" },
 // ];
 
-const LogoSet = () => (
-  <div className="flex shrink-0">
-    {brands.map((brand) => (
+const LogoSet = ({ id }: { id: string }) => (
+  <div className="flex shrink-0 gap-6 md:gap-16" aria-hidden={id !== "primary"}>
+    {brands.map((brand, index) => (
       <div
-        key={brand.name}
-        className="flex-shrink-0 mx-8 flex items-center justify-center h-16"
+        key={`${id}-${brand.name}-${index}`}
+        className="flex-shrink-0 flex items-center justify-center h-10 md:h-16"
       >
         <img
           src={brand.logo}
-          alt={brand.name}
-          className={`${brand.width} max-h-10 object-contain grayscale ${brand.bright ? 'opacity-90' : 'opacity-70'} ${brand.invert ? 'invert' : ''}`}
+          alt={id === "primary" ? brand.name : ""}
+          className={`w-16 md:w-28 max-h-5 md:max-h-10 object-contain grayscale ${brand.bright ? 'opacity-90' : 'opacity-70'} ${brand.invert ? 'invert' : ''}`}
+          loading="eager"
         />
       </div>
     ))}
@@ -56,11 +57,10 @@ const BrandCarousel = () => {
           <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
-          {/* Scrolling track - 3 identical sets for seamless loop */}
-          <div className="flex animate-scroll-infinite">
-            <LogoSet />
-            <LogoSet />
-            <LogoSet />
+          {/* Scrolling track - 2 identical sets for seamless loop */}
+          <div className="flex gap-6 md:gap-16 animate-scroll-infinite will-change-transform" style={{ width: 'max-content' }}>
+            <LogoSet id="primary" />
+            <LogoSet id="duplicate" />
           </div>
         </div>
       </div>

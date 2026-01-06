@@ -69,3 +69,35 @@ jobs:
           destination-repository-name: 'front-end-developer'
           target-branch: 'gh-pages'
           commit-message: 'Deploy front-end portfolio'
+
+  deploy-senior:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Senior Software Engineer Portfolio
+        run: npm run build
+        env:
+          VITE_PORTFOLIO_TYPE: senior
+          VITE_BASE_PATH: /senior-software-engineer/
+          VITE_TITLE: Senior Software Engineer
+          VITE_META_DESCRIPTION: Senior Software Engineer crafting high performance web applications with modern technologies.
+
+      - name: Deploy to senior-software-engineer repo
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.SENIOR_DEPLOY_KEY }}
+        with:
+          source-directory: 'dist'
+          destination-github-username: 'justinmarkdaniel'
+          destination-repository-name: 'senior-software-engineer'
+          target-branch: 'gh-pages'
+          commit-message: 'Deploy senior software engineer portfolio'

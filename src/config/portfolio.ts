@@ -1,40 +1,51 @@
 // Portfolio configuration based on build-time environment variable
 // Defaults to 'fullstack' if not set
 
-type PortfolioType = 'fullstack' | 'frontend';
+type PortfolioType = 'fullstack' | 'frontend' | 'senior';
 
 const portfolioType: PortfolioType =
   (import.meta.env.VITE_PORTFOLIO_TYPE as PortfolioType) || 'fullstack';
 
 export const isFullStack = portfolioType === 'fullstack';
 export const isFrontend = portfolioType === 'frontend';
+export const isSenior = portfolioType === 'senior';
+
+// Senior uses same content as fullstack
+const useFullStackContent = isFullStack || isSenior;
 
 export const config = {
   type: portfolioType,
   isFullStack,
   isFrontend,
+  isSenior,
 
   // Titles and headings
-  title: isFullStack
-    ? 'Full Stack Developer'
-    : 'Front End Developer',
+  title: isSenior
+    ? 'Senior Software Engineer'
+    : isFullStack
+      ? 'Full Stack Developer'
+      : 'Front End Developer',
 
-  metaDescription: isFullStack
-    ? 'Full Stack Developer crafting high performance web applications with modern technologies.'
-    : 'Front End Developer crafting high performance web applications with modern technologies.',
+  metaDescription: isSenior
+    ? 'Senior Software Engineer crafting high performance web applications with modern technologies.'
+    : isFullStack
+      ? 'Full Stack Developer crafting high performance web applications with modern technologies.'
+      : 'Front End Developer crafting high performance web applications with modern technologies.',
 
   // Hero section
-  heroSubtitle: isFullStack
-    ? 'Full Stack Developer crafting'
-    : 'Front End Developer crafting',
+  heroSubtitle: isSenior
+    ? 'Senior Software Engineer crafting'
+    : isFullStack
+      ? 'Full Stack Developer crafting'
+      : 'Front End Developer crafting',
 
   // Tech stack pills (hero section)
-  techStack: isFullStack
+  techStack: useFullStackContent
     ? ['React', 'Node.js', 'TypeScript', 'JavaScript', 'Next.js', 'SQL', 'AWS', 'Google Cloud']
     : ['React', 'TypeScript', 'JavaScript', 'Next.js', 'Tailwind CSS', 'HTML5', 'CSS3', 'Git'],
 
   // Skills section - main categories
-  skillCategories: isFullStack
+  skillCategories: useFullStackContent
     ? [
         {
           title: 'Frontend',
@@ -95,7 +106,7 @@ export const config = {
       ],
 
   // Additional technologies (skills section)
-  additionalTech: isFullStack
+  additionalTech: useFullStackContent
     ? ['TypeScript', 'HTML5', 'CSS3', 'REST APIs', 'MySQL', 'MongoDB', 'Jest', 'GitHub Actions', 'Stripe', 'Responsive Design', 'Accessibility (WCAG)']
     : ['HTML5', 'CSS3', 'REST APIs', 'Responsive Design', 'Accessibility (WCAG)', 'Web Performance', 'CI/CD'],
 };

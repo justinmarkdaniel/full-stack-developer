@@ -41,7 +41,7 @@ export const config = {
 
   // Tech stack pills (hero section)
   techStack: useFullStackContent
-    ? ['React', 'Node.js', 'TypeScript', 'JavaScript', 'Next.js', 'SQL', 'AWS', 'Google Cloud']
+    ? ['React', 'Ruby on Rails', 'Node.js', 'TypeScript', 'GraphQL', 'Next.js', 'AWS', 'Google Cloud']
     : ['React', 'TypeScript', 'JavaScript', 'Next.js', 'Tailwind CSS', 'HTML5', 'CSS3', 'Git'],
 
   // Skills section - main categories
@@ -59,10 +59,10 @@ export const config = {
         {
           title: 'Backend',
           skills: [
+            { name: 'Ruby on Rails', level: 88 },
             { name: 'Node.js', level: 92 },
-            { name: 'Express', level: 88 },
             { name: 'PostgreSQL', level: 85 },
-            { name: 'PHP', level: 95 },
+            { name: 'GraphQL', level: 85 },
           ],
         },
         {
@@ -107,7 +107,7 @@ export const config = {
 
   // Additional technologies (skills section)
   additionalTech: useFullStackContent
-    ? ['TypeScript', 'HTML5', 'CSS3', 'REST APIs', 'MySQL', 'MongoDB', 'Jest', 'GitHub Actions', 'Stripe', 'Responsive Design', 'Accessibility (WCAG)']
+    ? ['TypeScript', 'REST APIs', 'Redis', 'MySQL', 'MongoDB', 'Jest', 'RSpec', 'GitHub Actions', 'Stripe', 'Docker', 'Sidekiq']
     : ['HTML5', 'CSS3', 'REST APIs', 'Responsive Design', 'Accessibility (WCAG)', 'Web Performance', 'CI/CD'],
 };
 

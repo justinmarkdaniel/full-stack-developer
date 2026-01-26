@@ -6,7 +6,7 @@ const projects = [
   {
     title: "SEO Blab - Agentic AI platform powered by React",
     description: "Full-stack SaaS platform with React, TypeScript, and Node.js. Agentic AI system built with OpenAI Agent SDK. Features AI chat interface, real-time dashboard updates, Stripe billing integration, and Supabase backend with row-level security.",
-    tech: ["React", "TypeScript", "GraphQL", "Node.js", "Supabase", "Google Cloud"],
+    tech: ["React", "TypeScript", "GraphQL", "Node.js", "AWS", "Docker"],
     liveUrl: "https://www.seoblab.com",
     githubUrl: null,
     featured: true,
@@ -14,7 +14,7 @@ const projects = [
   {
     title: "Keyword Grid - Word vectorization SEO scoring SAAS",
     description: "Data-intensive analytics platform with Ruby on Rails backend, custom authentication, role-based access control, and recurring subscription management. Built optimised database schemas for handling large keyword datasets.",
-    tech: ["Ruby on Rails", "React", "PostgreSQL", "GraphQL", "Stripe"],
+    tech: ["Ruby on Rails", "React", "PostgreSQL", "GraphQL", "AWS", "Docker"],
     liveUrl: "https://www.keywordgrid.com",
     githubUrl: null,
     featured: true,

@@ -133,3 +133,4 @@ jobs:
           destination-repository-name: 'senior-ai-engineer'
           target-branch: 'gh-pages'
           commit-message: 'Deploy senior AI engineer portfolio'
+          create-target-branch-if-needed: true

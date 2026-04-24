@@ -6,6 +6,8 @@ import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
+import AIChatbot from "@/components/AIChatbot";
+import { config } from "@/config/portfolio";
 
 const Index = () => {
   const [contactOpen, setContactOpen] = useState(false);
@@ -23,6 +25,7 @@ const Index = () => {
       </main>
       <Footer />
       <ContactForm open={contactOpen} onOpenChange={setContactOpen} />
+      {config.isAI && <AIChatbot />}
     </div>
   );
 };

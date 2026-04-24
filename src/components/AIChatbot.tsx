@@ -46,10 +46,21 @@ function mockReply(input: string): string {
   return "Good question. Quick note — I'm a mock bot for this portfolio, so my range is limited. Try asking about projects, RAG, agentic systems, or how to get in touch.";
 }
 
+const LAUNCHER_SEQUENCE = [
+  { text: "hey…", typing: 3000, hold: 4800 },
+  { text: "you…", typing: 2400, hold: 4400 },
+  { text: "yeah, you…", typing: 2800, hold: 4800 },
+  { text: "over here…", typing: 3000, hold: 5200 },
+  { text: "still scrolling?…", typing: 3600, hold: 5600 },
+  { text: "click me, pls…", typing: 3600, hold: 5600 },
+  { text: "fine. i'll wait.", typing: 3000, hold: 9999999 },
+];
+
 const AIChatbot = () => {
   const [open, setOpen] = useState(false);
   const [launcherVisible, setLauncherVisible] = useState(false);
-  const [launcherTyped, setLauncherTyped] = useState(false);
+  const [launcherStep, setLauncherStep] = useState(0);
+  const [launcherTyping, setLauncherTyping] = useState(true);
   const [launcherDots, setLauncherDots] = useState(".");
   const [messages, setMessages] = useState<Message[]>([GREETING]);
   const [input, setInput] = useState("");
@@ -59,23 +70,35 @@ const AIChatbot = () => {
 
   useEffect(() => {
     const show = setTimeout(() => setLauncherVisible(true), 5000);
-    const typed = setTimeout(() => setLauncherTyped(true), 7200);
-    return () => {
-      clearTimeout(show);
-      clearTimeout(typed);
-    };
+    return () => clearTimeout(show);
   }, []);
 
   useEffect(() => {
-    if (launcherTyped || !launcherVisible) return;
+    if (!launcherVisible || !launcherTyping) return;
     const frames = [".", "..", "..."];
     let i = 0;
+    setLauncherDots(frames[0]);
     const id = setInterval(() => {
       i = (i + 1) % frames.length;
       setLauncherDots(frames[i]);
-    }, 420);
+    }, 840);
     return () => clearInterval(id);
-  }, [launcherVisible, launcherTyped]);
+  }, [launcherVisible, launcherTyping]);
+
+  useEffect(() => {
+    if (!launcherVisible) return;
+    const step = LAUNCHER_SEQUENCE[launcherStep];
+    if (launcherTyping) {
+      const t = setTimeout(() => setLauncherTyping(false), step.typing);
+      return () => clearTimeout(t);
+    }
+    if (launcherStep >= LAUNCHER_SEQUENCE.length - 1) return;
+    const t = setTimeout(() => {
+      setLauncherStep((s) => s + 1);
+      setLauncherTyping(true);
+    }, step.hold);
+    return () => clearTimeout(t);
+  }, [launcherVisible, launcherTyping, launcherStep]);
 
   useEffect(() => {
     if (!open) return;
@@ -226,7 +249,7 @@ const AIChatbot = () => {
             "hover:border-primary/60 hover:shadow-[0_15px_40px_-10px_rgba(0,0,0,0.7),0_0_40px_-5px_hsl(180_100%_50%_/_0.6)]",
             "hover:-translate-y-0.5 transition-all duration-300",
             "animate-chat-bar-intro",
-            launcherTyped && "animate-chat-nudge",
+            !launcherTyping && "animate-chat-nudge",
           )}
         >
           <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-primary/15 border border-primary/40 shrink-0">
@@ -240,8 +263,8 @@ const AIChatbot = () => {
             <span className="text-[10px] font-mono uppercase tracking-wider text-primary/80 leading-tight">
               AI Assistant
             </span>
-            <span className="text-sm text-foreground font-medium leading-tight min-w-[2.5rem]">
-              {launcherTyped ? "hey…" : launcherDots}
+            <span className="text-sm text-foreground font-medium leading-tight whitespace-nowrap w-[9.75rem]">
+              {launcherTyping ? launcherDots : LAUNCHER_SEQUENCE[launcherStep].text}
             </span>
           </div>
         </button>

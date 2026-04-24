@@ -101,3 +101,35 @@ jobs:
           destination-repository-name: 'senior-software-engineer'
           target-branch: 'gh-pages'
           commit-message: 'Deploy senior software engineer portfolio'
+
+  deploy-ai:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Senior AI Engineer Portfolio
+        run: npm run build
+        env:
+          VITE_PORTFOLIO_TYPE: ai
+          VITE_BASE_PATH: /senior-ai-engineer/
+          VITE_TITLE: Senior AI Engineer
+          VITE_META_DESCRIPTION: Senior AI Engineer building agentic AI systems, LLM applications, and production-grade AI agents with modern AI engineering tools.
+
+      - name: Deploy to senior-ai-engineer repo
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.SENIOR_AI_DEPLOY_KEY }}
+        with:
+          source-directory: 'dist'
+          destination-github-username: 'justinmarkdaniel'
+          destination-repository-name: 'senior-ai-engineer'
+          target-branch: 'gh-pages'
+          commit-message: 'Deploy senior AI engineer portfolio'

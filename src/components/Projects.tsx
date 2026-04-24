@@ -1,8 +1,9 @@
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import BrandCarousel from "./BrandCarousel";
+import config from "@/config/portfolio";
 
-const projects = [
+const defaultProjects = [
   {
     title: "SEO Blab - Agentic AI platform powered by React",
     description: "Full-stack SaaS platform with React, TypeScript, and Node.js. Agentic AI system built with OpenAI Agent SDK. Features AI chat interface, real-time dashboard updates, Stripe billing integration, and Supabase backend with row-level security.",
@@ -54,6 +55,7 @@ const projects = [
 ];
 
 const Projects = () => {
+  const projects = config.isAI ? config.aiProjects : defaultProjects;
   return (
     <section id="projects" className="py-32 px-4 md:px-6">
       {/* Brand Carousel */}
@@ -65,8 +67,7 @@ const Projects = () => {
           <span className="text-primary font-mono text-sm">// Featured Work</span>
           <h2 className="text-4xl md:text-5xl font-bold">Projects</h2>
           <p className="text-muted-foreground max-w-xl">
-            A selection of recent projects showcasing my approach to building scalable,
-            user-focused applications.
+            {config.projectsSubtitle}
           </p>
         </div>
 

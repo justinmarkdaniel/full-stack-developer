@@ -59,7 +59,7 @@ export const config = {
   techStack: isAI
     ? ['LLMs', 'AI Agents', 'Python', 'Prompt Engineering', 'Machine Learning', 'RAG', 'AWS', 'TypeScript']
     : useFullStackContent
-      ? ['React', 'Ruby on Rails', 'Node.js', 'TypeScript', 'GraphQL', 'Next.js', 'AWS', 'Google Cloud']
+      ? ['React', 'TypeScript', 'Node.js', 'Express', 'GraphQL', 'Next.js', 'AWS', 'Google Cloud']
       : ['React', 'TypeScript', 'JavaScript', 'Next.js', 'Tailwind CSS', 'HTML5', 'CSS3', 'Git'],
 
   // Skills section - main categories
@@ -107,8 +107,8 @@ export const config = {
           {
             title: 'Backend',
             skills: [
-              { name: 'Ruby on Rails', level: 88 },
               { name: 'Node.js', level: 92 },
+              { name: 'Express', level: 90 },
               { name: 'PostgreSQL', level: 85 },
               { name: 'GraphQL', level: 85 },
             ],
@@ -214,7 +214,7 @@ export const config = {
   additionalTech: isAI
     ? ['OpenAI API', 'Anthropic Claude', 'Google Gemini', 'LangChain', 'LangGraph', 'MCP (Model Context Protocol)', 'Embeddings & Semantic Search', 'pgvector', 'AI Evals', 'Supabase', 'PostgreSQL', 'FastAPI', 'GitHub Actions', 'Stripe']
     : useFullStackContent
-      ? ['TypeScript', 'REST APIs', 'Redis', 'MySQL', 'MongoDB', 'Jest', 'RSpec', 'GitHub Actions', 'Stripe', 'Docker', 'Sidekiq']
+      ? ['TypeScript', 'REST APIs', 'Redis', 'MySQL', 'MongoDB', 'Jest', 'Vitest', 'GitHub Actions', 'Stripe', 'Docker', 'BullMQ']
       : ['HTML5', 'CSS3', 'REST APIs', 'Responsive Design', 'Accessibility (WCAG)', 'Web Performance', 'CI/CD'],
 };
 

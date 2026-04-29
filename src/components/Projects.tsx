@@ -15,7 +15,7 @@ const defaultProjects = [
   {
     title: "Keyword Grid - Word vectorization SEO scoring SAAS",
     description: "Data-intensive analytics platform with a TypeScript/Node.js + Express backend, custom authentication, role-based access control, and recurring subscription management. Built optimised database schemas for handling large keyword datasets.",
-    tech: ["TypeScript", "Node.js", "Express", "React", "PostgreSQL", "GraphQL", "AWS", "Docker"],
+    tech: ["TypeScript", "PHP", "Node.js", "Express", "React", "PostgreSQL", "GraphQL", "AWS", "Docker"],
     liveUrl: "https://www.keywordgrid.com",
     githubUrl: null,
     featured: true,

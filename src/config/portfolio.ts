@@ -59,7 +59,7 @@ export const config = {
   techStack: isAI
     ? ['LLMs', 'AI Agents', 'Python', 'Prompt Engineering', 'Machine Learning', 'RAG', 'AWS', 'TypeScript']
     : useFullStackContent
-      ? ['React', 'TypeScript', 'Node.js', 'Express', 'GraphQL', 'Next.js', 'AWS', 'Google Cloud']
+      ? ['PHP', 'React', 'TypeScript', 'Node.js', 'Express', 'GraphQL', 'Next.js', 'AWS', 'Google Cloud']
       : ['React', 'TypeScript', 'JavaScript', 'Next.js', 'Tailwind CSS', 'HTML5', 'CSS3', 'Git'],
 
   // Skills section - main categories
@@ -102,6 +102,7 @@ export const config = {
               { name: 'TypeScript', level: 90 },
               { name: 'Next.js', level: 88 },
               { name: 'Tailwind CSS', level: 92 },
+              { name: 'HTML5 / CSS3', level: 92 },
             ],
           },
           {
@@ -109,6 +110,7 @@ export const config = {
             skills: [
               { name: 'Node.js', level: 92 },
               { name: 'Express', level: 90 },
+              { name: 'PHP', level: 85 },
               { name: 'PostgreSQL', level: 85 },
               { name: 'GraphQL', level: 85 },
             ],
@@ -120,6 +122,7 @@ export const config = {
               { name: 'Docker', level: 80 },
               { name: 'AWS / GCP', level: 78 },
               { name: 'CI/CD', level: 85 },
+              { name: 'GitHub Actions', level: 88 },
             ],
           },
         ]
@@ -171,7 +174,7 @@ export const config = {
     {
       title: 'Keyword Grid - Word embedding + semantic scoring SaaS',
       description: 'Data-intensive SEO analytics platform using word vector embeddings for semantic keyword scoring. Python backend with custom ML scoring pipeline, authentication, role-based access, and subscription billing.',
-      tech: ['Python', 'Word Embeddings', 'Machine Learning', 'PostgreSQL', 'pgvector', 'React'],
+      tech: ['Python', 'PHP', 'Word Embeddings', 'Machine Learning', 'PostgreSQL', 'pgvector', 'React'],
       liveUrl: 'https://www.keywordgrid.com',
       githubUrl: null,
       featured: true,
@@ -214,7 +217,7 @@ export const config = {
   additionalTech: isAI
     ? ['OpenAI API', 'Anthropic Claude', 'Google Gemini', 'LangChain', 'LangGraph', 'MCP (Model Context Protocol)', 'Embeddings & Semantic Search', 'pgvector', 'AI Evals', 'Supabase', 'PostgreSQL', 'FastAPI', 'GitHub Actions', 'Stripe']
     : useFullStackContent
-      ? ['TypeScript', 'REST APIs', 'Redis', 'MySQL', 'MongoDB', 'Jest', 'Vitest', 'GitHub Actions', 'Stripe', 'Docker', 'BullMQ']
+      ? ['TypeScript', 'REST APIs', 'Redis', 'MySQL', 'MongoDB', 'Jest', 'Vitest', 'GitHub Actions', 'Stripe', 'Docker']
       : ['HTML5', 'CSS3', 'REST APIs', 'Responsive Design', 'Accessibility (WCAG)', 'Web Performance', 'CI/CD'],
 };
 

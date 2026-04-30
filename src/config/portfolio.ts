@@ -59,7 +59,7 @@ export const config = {
   techStack: isAI
     ? ['LLMs', 'AI Agents', 'Python', 'Prompt Engineering', 'Machine Learning', 'RAG', 'AWS', 'TypeScript']
     : useFullStackContent
-      ? ['PHP', 'React', 'TypeScript', 'Node.js', 'Express', 'GraphQL', 'Next.js', 'AWS', 'Google Cloud']
+      ? ['React', 'Node.js', 'TypeScript', 'AWS', 'Express', 'PHP', 'Next.js', 'GraphQL', 'Laravel', 'Rails', 'Google Cloud']
       : ['React', 'TypeScript', 'JavaScript', 'Next.js', 'Tailwind CSS', 'HTML5', 'CSS3', 'Git'],
 
   // Skills section - main categories
@@ -103,6 +103,8 @@ export const config = {
               { name: 'Next.js', level: 88 },
               { name: 'Tailwind CSS', level: 92 },
               { name: 'HTML5 / CSS3', level: 92 },
+              { name: 'Vue.js', level: 80 },
+              { name: 'Angular', level: 75 },
             ],
           },
           {
@@ -111,6 +113,8 @@ export const config = {
               { name: 'Node.js', level: 92 },
               { name: 'Express', level: 90 },
               { name: 'PHP', level: 85 },
+              { name: 'Laravel', level: 82 },
+              { name: 'Ruby on Rails', level: 80 },
               { name: 'PostgreSQL', level: 85 },
               { name: 'GraphQL', level: 85 },
             ],
@@ -123,6 +127,8 @@ export const config = {
               { name: 'AWS / GCP', level: 78 },
               { name: 'CI/CD', level: 85 },
               { name: 'GitHub Actions', level: 88 },
+              { name: 'Unit / Integration / E2E', level: 88 },
+              { name: 'Jest / Vitest', level: 88 },
             ],
           },
         ]
